@@ -1,0 +1,21 @@
+ToggleEditMode (F12) - toggle Edit Mode on or off
+
+SimulateLeftMouseClick (none) - because when you click around the screen, D3 moves your character around and interacts with the game world, it's probably easier just to press a hotkey to simulate a mouse click - edit this in TurboHUD\plugins\Razor\Click\ClickEventHandler.cs
+
+SimulateRightMouseClick (none) - because when you click around the screen, D3 moves your character around and interacts with the game world, it's probably easier just to press a hotkey to simulate a mouse click - edit this in TurboHUD\plugins\Razor\Click\ClickEventHandler.cs
+
+ToggleEnable (Ctrl + X) - toggle display on or off
+
+ToggleGrid (Ctrl + G) - toggle placement grid display on or off
+
+HotkeyUndo (Ctrl + Z) - undo movement or resize
+
+HotkeyUndoAll (Ctrl + 0) - undo all movements or resizes (ctrl + ZERO)
+
+HotkeySave (Ctrl + S) - save config file now (this is separate from auto-save, but is still subject to the logging limitations of your TH version)
+
+HotkeyCancel (Esc) - cancel your current move or resize action
+
+HotkeyPickupNext (Right) - cycle forwards through all areas under your cursor and pick up the next one
+
+HotkeyPickupPrev (Left) - cycle backwards through all areas under your cursor and pick up the previous one
