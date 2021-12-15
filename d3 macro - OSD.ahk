@@ -42,9 +42,9 @@ Gui, Menu:Font, cRed
 Gui, Menu:Add, Text, Section, D3 MACROS
 Gui, Menu:Add, Text, xs, =========
 Gui, Menu:add, Button, ys vScriptRun gScriptRun, Running
-Gui, Menu:Add, CheckBox, xs vBuildRat gBuildRat, rat   |  hexing macro
+Gui, Menu:Add, CheckBox, xs vBuildRat gBuildRat,   rat   |  hexing macro
 Gui, Menu:Add, CheckBox, xs vBuildZnec gBuildZnec, znec  |  force move
-Gui, Menu:Add, CheckBox, xs vBuildDh gBuildDh, dh    |  force stand still (LShift)
+Gui, Menu:Add, CheckBox, xs vBuildDh gBuildDh,     dh/mk |  force stand still (LShift)
 Gui, Menu:Add, Text, Section, NumLock
 Gui, Menu:Add, CheckBox, ys vKeyNumLockOne gKeyNumLockOne, N1
 Gui, Menu:Add, CheckBox, ys vKeyNumLockTwo gKeyNumLockTwo, N2
@@ -244,6 +244,7 @@ return
 ;; ===============
 
 #IfWinActive Diablo III
+Enter:: ;; To stop spamming if speaking in chat
 ~e::
 if (FirstKeyPress) {
 	ScriptOn := "Active"
@@ -277,21 +278,21 @@ return
 ;; ==================================
 
 ~XButton2::
-    Toggle := false
-    SetNumLockState, On
-    sleep 50
-    Send {Numpad1 Up}
-    Send {Numpad2 Up}
-    Send {Numpad3 Up}
-    Send {Numpad4 Up}
-    sleep 50
-	SetNumLockState, Off
-	FirstKeyPress := true
-	ScriptOn := ""
-	if (A_ThisHotkey = "~Xbutton2") {
-		sleep 500
-		send, {XButton2}
-	}
+Toggle := false
+SetNumLockState, On
+sleep 50
+Send {Numpad1 Up}
+Send {Numpad2 Up}
+Send {Numpad3 Up}
+Send {Numpad4 Up}
+sleep 50
+SetNumLockState, Off
+FirstKeyPress := true
+ScriptOn := ""
+if (A_ThisHotkey = "~Xbutton2") {
+	sleep 500
+	send, {XButton2}
+}
 return
 
 ;; ================================================
@@ -371,9 +372,9 @@ return
 
 ; Hotkey to salvage inventory
 !q:: 
-	If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
-		salvageStuff()
-	return
+If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
+	salvageStuff()
+return
 
 salvageStuff()
 {
