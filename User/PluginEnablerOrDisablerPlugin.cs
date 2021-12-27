@@ -361,25 +361,25 @@ namespace Turbo.Plugins.User
             // Show ancient and primal items on mini map.
                 plugin.AncientDecorator.Decorators.Add(new MapLabelDecorator(Hud)
                 {
-                    LabelFont = Hud.Render.CreateFont("tahoma", 6, 255, 235, 120, 0, true, false, false),
+                    LabelFont = Hud.Render.CreateFont("consolas", 6, 255, 235, 120, 0, true, false, false),
                     RadiusOffset = 14,
                     Up = true,
                 });
                 plugin.AncientSetDecorator.Decorators.Add(new MapLabelDecorator(Hud)
                 {
-                    LabelFont = Hud.Render.CreateFont("tahoma", 6, 255, 0, 170, 0, true, false, false),
+                    LabelFont = Hud.Render.CreateFont("consolas", 6, 255, 0, 170, 0, true, false, false),
                     RadiusOffset = 14,
                     Up = true,
                 });
                 plugin.PrimalDecorator.Decorators.Add(new MapLabelDecorator(Hud)
                 {
-                    LabelFont = Hud.Render.CreateFont("tahoma", 7, 255, 240, 20, 0, true, false, false),
+                    LabelFont = Hud.Render.CreateFont("consolas", 7, 255, 240, 20, 0, true, false, false),
                     RadiusOffset = 14,
                     Up = true,
                 });
                 plugin.PrimalSetDecorator.Decorators.Add(new MapLabelDecorator(Hud)
                 {
-                    LabelFont = Hud.Render.CreateFont("tahoma", 7, 255, 240, 20, 0, true, false, false),
+                    LabelFont = Hud.Render.CreateFont("consolas", 7, 255, 240, 20, 0, true, false, false),
                     RadiusOffset = 14,
                     Up = true,
                 });
