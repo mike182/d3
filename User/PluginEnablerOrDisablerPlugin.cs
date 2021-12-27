@@ -508,6 +508,68 @@ namespace Turbo.Plugins.User
 // Third party Plugins Customization
 ////////////////////////////////////
 
+	// Prrovoss.Popups
+	// ===============
+            Hud.RunOnPlugin<Prrovoss.Popups.ActorAppearedPopup>(plugin =>
+            {
+                //sno, name, hint, title, duration (ins ms), custom decorator (ignore if not needed)
+                plugin.Add(345935, "Normal Rift", "", "Portal open", 3000);
+                plugin.Add(330698, "Shield Pylon", "", "Appeared", 1000);
+                plugin.Add(330697, "Channeling Pylon", "", "Appeared", 1000);
+                plugin.Add(330695, "Power Pylon", "", "Appeared", 1000);
+                plugin.Add(398654, "Conduit Pylon", "", "Appeared", 1000);
+            });
+
+            Hud.RunOnPlugin<Prrovoss.Popups.BuffAppliedPopup>(plugin =>
+            {
+                //sno, icon, name, hint, title, duration (in ms), custom decorator (ignore if not needed)
+                plugin.Add(465952, 1, "Final Service", "", "Buff activated", 6000);
+                plugin.Add(262935, 0, "Power Pylon", "", "Buff activated", 4000);
+                plugin.Add(266258, 0, "Channeling Pylon", "", "Buff activated", 4000);
+                plugin.Add(266254, 0, "Shield Pylon", "", "Buff activated", 4000);
+                //plugin.Add(402461, 2, "Occulus", "", "Buff activated", 3000);
+                //plugin.Add(246562, 1, "Flying Dragon", "", "Buff activated", 3000);
+            });
+
+            Hud.RunOnPlugin<Prrovoss.Popups.MonsterAppearedPopup>(plugin =>
+            {
+                //sno, name, hint, title, duration (in ms), custom decorator (ignore if not needed)
+                plugin.Add(451002, "Sir William", "", "Appeared", 5000);
+                plugin.Add(450999, "Princess Lilian", "", "Appeared", 5000);
+            });
+
+            Hud.RunOnPlugin<Prrovoss.Popups.ItemDroppedPopup>(plugin =>
+            {
+                var LegendaryDecorator = new TopLabelWithTitleDecorator(Hud)
+                {
+                    BorderBrush = Hud.Render.CreateBrush(255, 180, 147, 109, -1),
+                    BackgroundBrush = Hud.Render.CreateBrush(200, 91, 55, 19, 0),
+                    TextFont = Hud.Render.CreateFont("tahoma", 8, 255, 255, 255, 255, true, false, false),
+                    TitleFont = Hud.Render.CreateFont("tahoma", 6, 255, 180, 147, 109, true, false, false),
+                };
+
+                var AncientDecorator = new TopLabelWithTitleDecorator(Hud)
+                {
+                    BorderBrush = Hud.Render.CreateBrush(255, 183, 132, 21, 5),
+                    BackgroundBrush = Hud.Render.CreateBrush(200, 91, 55, 19, 0),
+                    TextFont = Hud.Render.CreateFont("tahoma", 8, 255, 255, 255, 255, true, false, false),
+                    TitleFont = Hud.Render.CreateFont("tahoma", 6, 255, 180, 147, 109, true, false, false),
+                };
+				
+                var PrimalDecorator = new TopLabelWithTitleDecorator(Hud)
+                {
+                    BorderBrush = Hud.Render.CreateBrush(255, 183, 22, 32, 5),
+                    BackgroundBrush = Hud.Render.CreateBrush(200, 91, 55, 19, 0),
+                    TextFont = Hud.Render.CreateFont("tahoma", 8, 255, 255, 255, 255, true, false, false),
+                    TitleFont = Hud.Render.CreateFont("tahoma", 6, 255, 180, 147, 109, true, false, false),
+                };
+
+                //sno (put null if not needed), itemQuality (put null if not needed), ancientRank (put null if not needed), hint, title, duration (in ms), custom decorator (ignore if not needed)
+                //plugin.Add(null, ItemQuality.Legendary, 0, "", "Legendary dropped", 5000, LegendaryDecorator);
+                plugin.Add(null, ItemQuality.Legendary, 1, "", "Ancient dropped", 9000, AncientDecorator);
+                plugin.Add(null, ItemQuality.Legendary, 2, "", "Primal dropped", 15000, PrimalDecorator);
+            });
+
     // johnbl
     // ======
 			// draws a cursor on the minimap
