@@ -19,6 +19,7 @@ namespace Turbo.Plugins.User
 			Hud.RunOnPlugin<MovableController>(plugin =>
 			{
 				//Configure(string pluginName, string areaName, float x, float y, float width, float height, bool enabled = true, string configFileName = null, string areaSettings = null)
+				plugin.Configure("SpiritBarrageHelper", "Bars", 960f, 702f, 141f, 64f, true, "MovablePluginConfig");
 				plugin.Configure("MovableBuffList", "PlayerBottom", 941f, 583f, 37f, 37f, true, "MovablePluginConfig");
 				plugin.Configure("MovableBuffList", "PlayerTop", 941f, 324f, 37f, 37f, true, "MovablePluginConfig");
 				plugin.Configure("MovableBuffList", "PlayerLeft", 771f, 448f, 37f, 37f, true, "MovablePluginConfig");
@@ -27,8 +28,6 @@ namespace Turbo.Plugins.User
 				plugin.Configure("MovableBuffList", "MiniMapRight", 1877f, 188f, 37f, 37f, true, "MovablePluginConfig");
 				plugin.Configure("MovableBuffList", "TopLeft", 0f, 1f, 37f, 37f, true, "MovablePluginConfig");
 				plugin.Configure("MovableBuffList", "TopRight", 960f, 1f, 37f, 37f, true, "MovablePluginConfig");
-				plugin.Configure("SpiritBarrageHelper", "Bars", 960f, 702f, 141f, 64f, true, "MovablePluginConfig");
-				plugin.Configure("MonsterCounter", "Counter", 1612f, 799f, 208f, 30f, true, "MovablePluginConfig");
 				plugin.Configure("MageGauge", "Countdown", 835f, 691f, 249f, 195f, true, "MovablePluginConfig");
 				plugin.Configure("BountyDropTracker", "Alert", 860f, 216f, 200f, 100f, true, "MovablePluginConfig");
 				plugin.Configure("PartyProcTracker", "Bars", 1584f, 381f, 187f, 142f, true, "MovablePluginConfig");

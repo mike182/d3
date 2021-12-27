@@ -14,27 +14,33 @@ namespace Turbo.Plugins.User
 		public void Customize()
 		{
 			Hud.TryTogglePlugin("Custom.DoorsPlugin", true);
+			Hud.TryTogglePlugin("Custom.HallOfAgonyShortcutsHints", true);
 			Hud.TryTogglePlugin("Custom.MinimapCursorPlugin", true);
 			Hud.TryTogglePlugin("Custom.MonsterCirclePlugin", true);
 			Hud.TryTogglePlugin("Custom.PartyCooldownsPlugin", true);
 			Hud.TryTogglePlugin("Custom.RatrunsPlugin", true);
 			Hud.TryTogglePlugin("Custom.RiftOrbPlugin", true);
 			Hud.TryTogglePlugin("Custom.ShockTowerPlugin", false);
-			Hud.TryTogglePlugin("DAV.DAV_Extend_OtherPlugin", true);
-			Hud.TryTogglePlugin("DAV.DAV_NecroPetPlugin", true);
+			Hud.TryTogglePlugin("DAV.DAV_Extend_OtherPlugin", false);
+			Hud.TryTogglePlugin("DAV.DAV_NecroPetPlugin", false);
+			Hud.TryTogglePlugin("DAV.DAV_PoolsList", false);
 			Hud.TryTogglePlugin("DAV.DAV_UrshiPlugin", true);
+			Hud.TryTogglePlugin("Prrovoss.Popups.ActorAppearedPopup", true);
+			Hud.TryTogglePlugin("Prrovoss.Popups.BuffAppliedPopup", true);
+			Hud.TryTogglePlugin("Prrovoss.Popups.ItemDroppedPopup", true);
+			Hud.TryTogglePlugin("Prrovoss.Popups.MonsterAppearedPopup", true);
+			Hud.TryTogglePlugin("Prrovoss.Popups.PopupNotifications", true);
 			Hud.TryTogglePlugin("Razor.BountyDropTracker", true);
 			Hud.TryTogglePlugin("Razor.Click.ClickEventHandler", true);
 			Hud.TryTogglePlugin("Razor.CubedAndEmanatedItems", true);
 			Hud.TryTogglePlugin("Razor.GreaterRiftHints", true);
 			Hud.TryTogglePlugin("Razor.Hotkey.HotkeyEventHandler", true);
-			Hud.TryTogglePlugin("Razor.ImmunityHelper", true);
+			Hud.TryTogglePlugin("Razor.ImmunityHelper", false);
 			Hud.TryTogglePlugin("Razor.InventoryStashSearch", true);
 			Hud.TryTogglePlugin("Razor.Label.LabelController", true);
 			Hud.TryTogglePlugin("Razor.Log.TextLogger", true);
 			Hud.TryTogglePlugin("Razor.MageGauge", true);
 			Hud.TryTogglePlugin("Razor.Menu.MenuPlugin", true);
-			Hud.TryTogglePlugin("Razor.MonsterCounter", true);
 			Hud.TryTogglePlugin("Razor.Movable.MovableController", true);
 			Hud.TryTogglePlugin("Razor.MovableBuffList", true);
 			Hud.TryTogglePlugin("Razor.Party.PartyCOE", true);
@@ -44,6 +50,7 @@ namespace Turbo.Plugins.User
 			Hud.TryTogglePlugin("Razor.SpiritBarrageHelper", true);
 			Hud.TryTogglePlugin("Razor.Util.LocationInfo", false);
 			Hud.TryTogglePlugin("Razor.Util.UIOverlapHelper", true);
+			Hud.TryTogglePlugin("Resu.AriadnesThreadPlugin", false);
 			Hud.TryTogglePlugin("Resu.BattleTagAboveBanner", true);
 			Hud.TryTogglePlugin("Resu.DangerPlugin", true);
 			Hud.TryTogglePlugin("Resu.DarkerDiablo3Plugin", false);
@@ -52,6 +59,7 @@ namespace Turbo.Plugins.User
 			Hud.TryTogglePlugin("Resu.ParagonPercentagePlugin", true);
 			Hud.TryTogglePlugin("Resu.UrshisGiftPlugin", true);
 			Hud.TryTogglePlugin("User.CustomPluginEnablerOrDisabler", true);
+			Hud.TryTogglePlugin("User.DefaultPluginEnablerOrDisabler", true);
 			Hud.TryTogglePlugin("User.MenuPluginConfig", true);
 			Hud.TryTogglePlugin("User.MovablePluginConfig", true);
 			Hud.TryTogglePlugin("User.PluginEnablerOrDisablerPlugin", true);
