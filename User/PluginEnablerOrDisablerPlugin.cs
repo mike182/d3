@@ -78,7 +78,32 @@ namespace Turbo.Plugins.User
         // @ Turns off the door icon display on minimaps
             Hud.TogglePlugin<PortalPlugin>(true);
         // @ Turn off the weapon rack minimap location dots
-            Hud.TogglePlugin<RackPlugin>(false);
+            Hud.TogglePlugin<RackPlugin>(true);
+
+		// Change Occulus color --> Dark Yellow
+			Hud.RunOnPlugin<OculusPlugin>(plugin =>
+            {
+				plugin.Decorator = new WorldDecoratorCollection(
+                new GroundCircleDecorator(Hud)
+                {
+                    Brush = Hud.Render.CreateBrush(255, 204, 204, 0, -2),
+                    Radius = 10.0f,
+                },
+                new GroundLabelDecorator(Hud)
+                {
+                    CountDownFrom = 7,
+                    TextFont = Hud.Render.CreateFont("consolas", 12, 255, 204, 204, 0, true, false, 128, 0, 0, 0, true),
+                },
+                new GroundTimerDecorator(Hud)
+                {
+                    CountDownFrom = 7,
+                    BackgroundBrushEmpty = Hud.Render.CreateBrush(128, 0, 0, 0, 0),
+                    BackgroundBrushFill = Hud.Render.CreateBrush(200, 204, 204, 0, 0),
+                    // Radius = 30,
+					Radius = 0,
+                }
+                );
+            });
 
 	// OLD
             //Hud.GetPlugin<ShrinePlugin>().Enabled = false;
