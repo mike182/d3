@@ -49,7 +49,7 @@ namespace Turbo.Plugins.User
         // @ Turn off the Automated Paragon Screen captured saved to disc
             Hud.TogglePlugin<ParagonCapturePlugin>(false);
         // @ ONLY IN MULTIPLAYER this will disable the 4 lines of "DPS dealt to monsters" displayed in the lower section of the portrait
-            Hud.TogglePlugin<PortraitBottomStatsPlugin>(true);
+            Hud.TogglePlugin<PortraitBottomStatsPlugin>(false);
         // @ Turn off "Rift Completion" popup when rift progress is greater than 90%
             Hud.TogglePlugin<NotifyAtRiftPercentagePlugin>(false); 
         // @ Turns off the rift percentage and valuation display in the Rift Bar
@@ -59,7 +59,6 @@ namespace Turbo.Plugins.User
             Hud.TogglePlugin<ResourceOverGlobePlugin>(true);
         // Turn off Act Map normal/special bounty names and completion status
             Hud.TogglePlugin<WaypointQuestsPlugin>(true);
-
 
 	// Actors
 	// ======
@@ -131,7 +130,7 @@ namespace Turbo.Plugins.User
             Hud.TogglePlugin<InventoryAndStashPlugin>(true);
                 // See CustomizeDefault()
         // Cubed Item in Character profile
-            Hud.TogglePlugin<InventoryKanaiCubedItemsPlugin>(true);
+            Hud.TogglePlugin<InventoryKanaiCubedItemsPlugin>(false);
         // @ Turn off the materials displayed in the extra display bar below the Inventory
             Hud.TogglePlugin<InventoryMaterialCountPlugin>(true);
         // @ Turn off the display when hovered over the Stash tabs 
@@ -508,7 +507,7 @@ namespace Turbo.Plugins.User
             });
 
     // RuneB
-    // ====
+    // =====
 			// Shows the remaining cooldown on chosen partymember skills, using small icons in the top of the screen.
 			// Skills can be watched by adding their sno's to the WatchedSnos list - there are commented examples.
             Hud.RunOnPlugin<Custom.PartyCooldownsPlugin>(plugin =>
@@ -517,7 +516,7 @@ namespace Turbo.Plugins.User
             });
 
 	// BM
-	// ===
+	// ==
 			// Shows ShockTower on minimap and on ground.
             Hud.RunOnPlugin<Custom.ShockTowerPlugin>(plugin =>
             {
@@ -525,12 +524,12 @@ namespace Turbo.Plugins.User
             });
 	
     // CB
-    // ====
+    // ==
 			// Add circle under Blue or Yellow Monsters
             Hud.RunOnPlugin<Custom.MonsterCirclePlugin>(plugin =>
             {
                 plugin.Enabled = true;
-                plugin.ShowMinions = false;
+                plugin.ShowMinions = true;
             }); 
 
 	// SHAKE
@@ -575,6 +574,21 @@ namespace Turbo.Plugins.User
 			
     // DAV
     // ===
+			// This plugin show who has not upgrade the gems yet after the GR
+            Hud.RunOnPlugin<DAV.DAV_UrshiPlugin>(plugin => 
+            {
+                plugin.Enabled = true;
+            });
+
+			// This plugin track of the pools you find using the latest marker method.
+            Hud.RunOnPlugin<DAV.DAV_PoolsList>(plugin => 
+            {
+                plugin.Enabled = true;
+                plugin.showAlways = true;
+                plugin.showALLPool = true; 
+                plugin.showMapName = true;
+                plugin.skipPoolDecorator = false;
+            });
 
 			// circle for the skeleton & mage
 			// (original plugin zx-necromancerskeletonindicatorplugin.html ([v7.3] [ENGLISH] [ZX] NecromancerSkeletonIndicatorPlugin) )
@@ -606,12 +620,6 @@ namespace Turbo.Plugins.User
                 plugin.Bossonly = false;
                 plugin.showTimerShort = true;
                 plugin.showTimerLong = true;
-            });
-
-			// This plugin show who has not upgrade the gems yet after the GR
-            Hud.RunOnPlugin<DAV.DAV_UrshiPlugin>(plugin => 
-            {
-                plugin.Enabled = true;
             });
 
 	// RESU
@@ -669,7 +677,7 @@ namespace Turbo.Plugins.User
 			// Simple color filter that kills shiny colors and brings a darker Diablo 3.
             Hud.RunOnPlugin<Resu.DarkerDiablo3Plugin>(plugin =>
             {
-                plugin.Enabled = false;
+                plugin.Enabled = true;
             });
 
 			// Displays an advised group GRift level when rift dialogue is open (+ player battletag, Highest solo GR level, class).
