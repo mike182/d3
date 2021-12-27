@@ -244,7 +244,6 @@ return
 ;; ===============
 
 #IfWinActive Diablo III
-Enter:: ;; To stop spamming if speaking in chat
 ~e::
 if (FirstKeyPress) {
 	ScriptOn := "Active"
