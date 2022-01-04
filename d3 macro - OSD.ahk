@@ -58,6 +58,7 @@ Gui, Menu:Add, CheckBox, ys vKeySpamFour gKeySpamFour, S4
 Gui, Menu:Add, Text, xs Section, • NumLock/Spam Activation - [E]
 Gui, Menu:Add, Text, xs Section, • Clicker   ---  [Alt + Clic]
 Gui, Menu:Add, Text, xs Section, • Clicker   ---  [Alt + Right Clic]
+Gui, Menu:Add, Text, xs Section, • Salvage   ---  [Alt + qq (fast)]
 Gui, Menu:Show, x 1500 y 200, AutoSize , d3 macro
 
 ; Gui OSD
@@ -372,7 +373,7 @@ return
 ; Hotkey to salvage inventory
 !q:: 
 If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
-	salvageStuff()
+	;salvageStuff()
 return
 
 salvageStuff()
