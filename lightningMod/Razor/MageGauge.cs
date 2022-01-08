@@ -32,6 +32,7 @@ namespace Turbo.Plugins.Razor
 
     public class MageGauge : BasePlugin, IAfterCollectHandler, IInGameWorldPainter, IMovable, INewAreaHandler //, ICustomizer, IInGameTopPainter
     {
+		public bool DisableResource { get; set; } = true;
 		public bool ShowResourceSpentForSingularityOnly { get; set; } = true;
 		public bool ShowMageCircles { get; set; } = false;
 		public bool ShowMageDamageMultiplierLabels { get; set; } = true; //only applies to singularity mages
@@ -200,7 +201,7 @@ namespace Turbo.Plugins.Razor
 					CountFont.DrawText(layout, x - layout.Metrics.Width*0.5f, y);
 					
 					float width = w * (m.Essence / maxEssence);
-					if (UsingSingularityRune || !ShowResourceSpentForSingularityOnly)
+					if (!DisableResource && (UsingSingularityRune || !ShowResourceSpentForSingularityOnly))
 					{
 						BgBrush.DrawRectangle(x - offsetX - w - 2, y + offsetY*0.5f - h*0.5f - 2, w + 4, h + 4);
 						EssenceBrush.DrawRectangle(x - offsetX - width, y + offsetY*0.5f - h*0.5f, width, h);
